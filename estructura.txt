@@ -1,0 +1,11 @@
+app/
+├─ api/
+│   ├─ subte/
+│   │   ├─ routes.ts         ← consulta rutas (GET)
+│   │   └─ vehiclePositions.ts ← consulta posición actual
+├─ hook/
+│   └─ useSubte.ts          ← lógica de fetch + filtro por líneas
+├─ components/
+│   └─ SubteMap.tsx         ← mapa con react-leaflet y marcadores de subtes
+└─ types/
+    └─ Subte.ts             ← definir interfaces: SubteRoute, SubteVehicle

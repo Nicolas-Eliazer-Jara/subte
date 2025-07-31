@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-const MapaLeafletNoSSR = dynamic(() => import('./MapaLeaflet').then(mod => mod.MapaLeaflet), {
+const MapaLeafletNoSSR = dynamic(() => import('./SubteMap'), {
   ssr: false,
 });
 

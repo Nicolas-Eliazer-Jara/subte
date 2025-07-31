@@ -1,0 +1,1 @@
+//Obtiene y filtra datos por línea

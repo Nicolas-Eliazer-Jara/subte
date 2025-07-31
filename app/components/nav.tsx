@@ -1,12 +1,11 @@
 import Image from 'next/image'
-
 import Fondo from '@/public/logo.svg'
 
 export function Nav() {
   return (
-    <div className='m-5 h-screen bg-[#323332] rounded-t-[30px] rounded-b-[20px]'>
+    <div className='m-5 h-[95%] bg-[#323332] rounded-t-[30px] rounded-b-[20px]'>
       <div className="bg-[#fed300] w-full h-[70px] rounded-t-[20px]">
-        <Image className='w-[60px] h-[60px] ml-10' height={50} width={50} src={Fondo}></Image>
+        <Image className='w-[60px] h-[60px] ml-10' alt="Logo" height={50} width={50} src={Fondo}></Image>
       </div>
       <div>
         <h1 className='text-white font-black pl-4 pt-5 pb-5 border-b-1 border-b-gray-500 w-[90%] ml-5'>Seleccione la Linea</h1>

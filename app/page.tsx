@@ -1,5 +1,5 @@
 import {Nav} from './components/nav'
-import {Map} from './components/map'
+import MapaLeafletWrapper from './components/MapaLeafletWrapper';
 import 'leaflet/dist/leaflet.css';
 
 
@@ -11,7 +11,7 @@ export default function Home() {
        </div>
 
        <div className=" w-6/9 h-screen">
-            <Map></Map>
+            <MapaLeafletWrapper></MapaLeafletWrapper>
        </div>
    </div>
   );

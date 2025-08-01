@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function Home() {
 
-     const [selectedRouteId , setSelectedRouteId] = useState<string>('');
+     const [selectedRouteId , setSelectedRouteId] = useState<string>('A');
 
   return (
    <div className=" flex">

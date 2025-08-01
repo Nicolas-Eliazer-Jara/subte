@@ -1,30 +1,32 @@
-//Obtiene y filtra datos por línea// useSubteData.ts
-
 import { useEffect, useState } from 'react';
-import { SubteRoute } from '@/app/types/Subte';
 
-export function useSubteData(routeId: string) {
-  const [data, setData] = useState<SubteRoute[]>([]);
-  const [filtered, setFiltered] = useState<SubteRoute[]>([]);
+export function useSubteData(selectedRouteId: string) {
+  const [filteredData, setFilteredData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-      const res = await fetch('/api/route');
-      const json = await res.json();
-      setData(json);
-      setLoading(false);
-    }
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/subte/route');
+        const data = await res.json();
+
+        const routes = data.routes;
+        if (Array.isArray(routes)) {
+          const filtrado = routes.filter(r => r.route_short_name === selectedRouteId);
+          setFilteredData(filtrado);
+        } else {
+          setFilteredData([]); // prevenir errores
+        }
+      } catch (e) {
+        console.error("Error cargando rutas de subte:", e);
+        setFilteredData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchData();
-  }, []);
+  }, [selectedRouteId]);
 
-  useEffect(() => {
-    if (routeId) {
-      const filtro = data.filter((r) => r.route_short_name === routeId);
-      setFiltered(filtro);
-    }
-  }, [routeId, data]);
-
-  return { filtered, loading };
+  return { filteredData, loading };
 }

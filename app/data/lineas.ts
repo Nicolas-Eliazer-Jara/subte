@@ -107,7 +107,7 @@ estaciones: [
 ]
  };
  export const LineaH = {
-  color:'#fed300',
+  color:'#ffd513',
   estaciones: [
     {nombre: 'Facultad de Derecho' , coords: [-34.583291,-58.390937]},
     {nombre: 'Las Heras' , coords: [-34.587425,-58.397091]},
